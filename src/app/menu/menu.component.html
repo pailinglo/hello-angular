@@ -1,0 +1,67 @@
+<!--using NavBar-->
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto"><!-- not sure how to make the buttons all the way to the right, tutorial said using ml-auto but it doesn't work here.-->
+                <li class="nav-item" *ngFor="let m of menu" [routerLink]="m.url" routerLinkActive="active">
+                    <a class="nav-link">{{m.displayText}}</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchText" name="searchText">
+                <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/search']" [queryParams]="{searchText: [searchText]}">Search</button>
+                <!--use click event to navigate programatically-->
+                <!-- <button class="btn btn-outline-success my-2 my-sm-0" (click)="search()">Search</button> -->
+                <!--use defined route in app-routing.module.ts, which require searchText as input. -->
+                <!-- <button class="btn btn-outline-success my-2 my-sm-0" [routerLink]="['/search',searchText]">Search</button> -->
+                
+            </form>
+        </div>
+    </nav>
+</div>
+<!--using nav-->
+<!-- <nav>
+<ul class="nav nav-pills nav-fill">
+     <li class="nav-item" *ngFor="let m of menu" [routerLink]="m.url" routerLinkActive="active">
+        <a class="nav-link">{{m.displayText}}</a></li>
+        <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+        </li>   
+</ul>
+</nav> -->
+<!-- <li class="nav-item" *ngFor="let m of menu" [routerLink]="m.url" routerLinkActive="active">{{m.displayText}}</li> -->
+
+
+<!--"routerLinkActive":when the url is active url, this css class will kick in and the button will use this css class-->
+<!-- <div class="btn-group">
+<button class="btn btn-primary" *ngFor="let m of menu" [routerLink]="m.url" routerLinkActive="active">{{m.displayText}}</button>
+</div> -->

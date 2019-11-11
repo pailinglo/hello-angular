@@ -1,0 +1,20 @@
+<ng-content></ng-content>
+<div class="card" [ngClass]="{'Fav':isFav}">
+    <div class="card-body">
+        <h5 class="card-title" appHighlight color="lightblue">{{product.name}}</h5>
+        <div class="card-content" (click)="showDescription()">{{description}}</div>
+        <div class="card-content">
+            <button class="btn btn-link btn-sm mr-1 px-0" (click)="showDescription()">
+                <span *ngIf="!toggleFlag">Expand</span>
+                <span *ngIf="toggleFlag">Collapse</span>
+            </button>
+            <button class="btn btn-link btn-sm" (click)="toggleFavorite()">Favorite</button>
+            Created on {{product.createDate|date}}
+        </div>
+        
+        <!-- href=# will route to the root directory, don't know how to handle this yet.-->
+        <!-- <a href="#" class="card-link" (click)="toggleFavorite()">Favorite</a>
+            <a class="btn btn-primary" href="#" role="button" (click)="toggleFavorite()">Favorite</a> -->
+
+    </div>
+</div>

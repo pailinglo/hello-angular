@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+  <div class="col-12 form-group shadow p-3 mb-5 bg-white rounded ">
+
+    <!--One way binding-->
+    <!-- <input type="text" #product_name value="" (keyup.enter)="onEnter(product_name.value)"
+        (blur)="onEnter(product_name.value);product_name.value=''"/> -->
+
+    <!-- Two way binding-->
+    <input class="form-control" type="text" value="" placeholder="New Post" (keyup.enter)="onEnter();"
+      (blur)="onEnter();" required [(ngModel)]="product_name" />
+
+    <div class="form-group ">
+      <label for="post"></label>
+      <textarea [(ngModel)]="product_desc" class="form-control z-depth-1" id="post_id" rows="10" placeholder="Today there is a ..."></textarea>
+    </div>
+
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-12 text-right">
+
+    
+  <button *ngIf="product_name" class="btn btn-primary" (click)="add()">Add</button>
+  <button *ngIf="!product_name" class="btn btn-primary" (click)="add()" disabled>Add</button>
+  </div>
+</div>
+  <!--??How could I display this message when user add a new product?-->
+  <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <button onclick="$('.alert').alert('close')">Enable alert</button> -->
+</div>

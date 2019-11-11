@@ -1,0 +1,79 @@
+
+//bootstrap
+//xs (for phones - screens less than 768px wide) 
+//sm (for tablets - screens equal to or greater than 768px wide) 
+//md (for small laptops - screens equal to or greater than 992px wide) 
+//lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+//xs
+@media all and (max-width:768px){
+    .login-container{
+        margin-top: 10%;
+        margin-bottom: 15%;
+        margin-left:0%;
+        //background-color:black;
+    }
+}
+//sm  and (max-width:992px)
+@media all and (min-width:768px) and (max-width:992px){
+    .login-container{
+        margin-top: 10%;
+        margin-bottom: 15%;
+        margin-left:20%;
+        //background-color:orange;
+    }
+}
+//md  and (max-width:1200px)
+@media all and (min-width:992px) and (max-width:1200px){
+    .login-container{
+        margin-top: 10%;
+        margin-bottom: 15%;
+        margin-left:30%;
+        //background-color:blue;
+    }
+}
+//lg
+@media all and (min-width:1200px){
+    .login-container{
+        margin-top: 10%;
+        margin-bottom: 15%;
+        margin-left:40%;
+        //background-color:red;
+    }
+}
+
+
+.login-container{
+    // margin-top: 10%;
+    // margin-bottom: 15%;
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    // width: 30%;
+}
+
+.login-container h3{
+    text-align: center;
+    color: #333;
+}
+
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+}
+
+.ForgetPwd{
+    color: #0062cc;
+    font-weight: 600;
+    text-decoration: none;
+}

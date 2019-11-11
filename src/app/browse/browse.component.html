@@ -1,0 +1,27 @@
+<app-shell>
+
+        <div content>
+
+                <div class="container">
+                        <div class="row">
+                                <div class="col-5">
+                <button class="btn btn-primary btn-sm" routerLink="../new">Create New Post</button>
+        </div>
+                <div class="col-7 mb-n4 text-right">
+                        <button class="btn btn-link" (click)="expandAll()">+Expand All</button>
+                        <button class="btn btn-link" (click)="favAll()">Favorite All</button>
+                </div>
+        </div>
+                <app-product-view #ref_products *ngFor="let p of products | slice:numStart:numEnd" [product]="p">
+                </app-product-view>
+                <!-- <app-product-view  [product]="products[0]" #ref_product></app-product-view> -->
+
+                <app-paginator numberOfPages={{totalNumberOfPages}} (numberOfPageClick)="updatePage($event)">
+                </app-paginator>
+
+        </div>
+        </div>
+        
+
+        
+</app-shell>

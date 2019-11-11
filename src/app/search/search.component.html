@@ -1,0 +1,19 @@
+<app-shell>
+
+        <div content>
+
+                <div class="container">
+                        
+                <app-product-view #ref_products *ngFor="let p of (products | kw:[searchText])" [product]="p">
+                </app-product-view>
+                <!-- <app-product-view  [product]="products[0]" #ref_product></app-product-view> -->
+
+                <app-paginator numberOfPages="3" (numberOfPageClick)="updatePage($event)">
+                </app-paginator>
+
+        </div>
+        </div>
+        
+
+        
+</app-shell>
